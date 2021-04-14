@@ -19,6 +19,7 @@ function cargarDatos()
  $("#tempVal").text(datos.temperatura);
  $("#humedadVal").text(datos.humedad);
  $("#iluminacionVal").text(datos.iluminacion);
+ $("#proximidadVal").text(datos.proximidad);
  var estatus_iluminacion = datos.iluminacion;
  var btniluminacion = document.getElementById("btniluminacion");
  if(estatus_iluminacion == "ON")
@@ -53,6 +54,7 @@ $.getJSON("http://192.168.0.10/").done(function(datos)
  $("#tempVal").text(datos.temperatura);
  $("#humedadVal").text(datos.humedad);
  $("#iluminacionVal").text(datos.iluminacion);
+ $("#proximidadVal").text(datos.proximidad);
 var valor = document.getElementById("btniluminacion");
 var ilum = datos.iluminacion;
 });
@@ -72,7 +74,7 @@ location.reload(true);
  <div class="container" >
  <div class="row">
  <div class="col-lg-12 text-center" style="color: white; text-align: center;">
- <h1 class="mt-5" style="color:pink ">CONTROL DE TEMPERATURA, HUMEDAD E ILUMINACION
+ <h1 class="mt-5" style="color:pink ">CONTROL DE TEMPERATURA, HUMEDAD, PROXIMIDAD E ILUMINACION
 </h1>
 
  </div>
@@ -89,6 +91,8 @@ location.reload(true);
  <h3>Temperatura: <span id="tempVal"></span></h3>
  <h3></h3>
  <h3>Humedad: <span id="humedadVal"></span> </h3>
+ <h3></h3>
+ <h3>Proximidad: <span id="proximidadVal"></span> </h3>
  <h3></h3>
  </div>
  </div>

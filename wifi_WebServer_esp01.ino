@@ -8,6 +8,9 @@
 // Inicializamos el sensor DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
+// Definir el pin del sensor IR
+byte sensorpir = 7;
+
 #include "WiFiEsp.h"
 
 // Emulate Serial1 on pins 6/7 if not present
@@ -138,7 +141,16 @@ void loop()
           else
           {
             client.print("ON");
-          }                  
+          }   
+          client.print("\",\"proximidad\":\"");                                      
+          if(digitalRead(sensorpir)==LOW)
+          {
+            client.print("OFF");                                                      
+          }
+          else
+          {
+            client.print("ON");
+          }                   
           client.println("\"}");
           break;
         }
